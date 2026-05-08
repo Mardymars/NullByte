@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/launcher_purple"
+        android:pathData="M23,18h16v72h-16z" />
+    <path
+        android:fillColor="@color/launcher_purple"
+        android:pathData="M69,18h16v72h-16z" />
+    <path
+        android:fillColor="@color/launcher_purple"
+        android:pathData="M39,18h16l30,72H69z" />
+</vector>

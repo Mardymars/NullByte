@@ -1,0 +1,12 @@
+.gradle/
+.gradle-home/
+.kotlin/
+.sixth/
+.tmp/
+Tools/
+build/
+app/build/
+local.properties
+*.iml
+preview/*.log
+preview/*.pid

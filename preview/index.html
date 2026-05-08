@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NullByte Preview</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-left"></div>
+  <div class="ambient ambient-right"></div>
+
+  <main class="shell">
+    <section class="intro-card">
+      <div class="eyebrow">Localhost preview</div>
+      <h1>NullByte</h1>
+      <p class="lede">
+        This browser preview mirrors the Android app concept: dark, offline-first,
+        tutorial-guided, and built around one simple job.
+      </p>
+
+      <div class="facts">
+        <article class="fact">
+          <h2>What you can check here</h2>
+          <p>Onboarding flow, home screen, privacy copy, metadata review, export format selection, and reminder messaging.</p>
+        </article>
+        <article class="fact">
+          <h2>What this preview is not</h2>
+          <p>It does not sanitize real images in the browser. This is a design and product-flow preview for localhost review.</p>
+        </article>
+      </div>
+
+      <div class="control-panel">
+        <div>
+          <p class="panel-title">Preview screen</p>
+          <div class="screen-tabs" id="screen-tabs">
+            <button class="tab is-active" data-screen="onboarding">Tutorial</button>
+            <button class="tab" data-screen="home">Home</button>
+            <button class="tab" data-screen="review">Review</button>
+            <button class="tab" data-screen="complete">Complete</button>
+          </div>
+        </div>
+
+        <div>
+          <p class="panel-title">Preview mode</p>
+          <div class="screen-tabs" id="device-tabs">
+            <button class="tab is-active" data-device="phone">Phone</button>
+            <button class="tab" data-device="tablet">Tablet</button>
+          </div>
+        </div>
+
+        <div class="mini-note">
+          <span class="mini-note-dot"></span>
+          Local reminder notifications are shown as preview cards inside the mockup.
+        </div>
+      </div>
+    </section>
+
+    <section class="device-stage">
+      <div class="device-wrap" id="device-wrap">
+        <div class="device device-phone" id="device">
+          <div class="device-header">
+            <span>9:41</span>
+            <span>Offline preview</span>
+          </div>
+          <div class="device-body">
+            <div class="screen screen-onboarding is-visible" data-screen="onboarding">
+              <div class="screen-pill">Tutorial 1 of 4</div>
+              <h2 class="screen-title">What NullByte does</h2>
+              <p class="screen-text">
+                NullByte creates a fresh share-ready copy of your photo without the common metadata
+                that can reveal more than you intended.
+              </p>
+              <ul class="bullet-list">
+                <li>Scans common GPS, camera, time, and author-style tags locally.</li>
+                <li>Explains the flow in simple language before the user does anything.</li>
+              </ul>
+
+              <div class="tutorial-panel">
+                <button class="tutorial-nav" id="tutorial-prev" disabled>Previous</button>
+                <div class="tutorial-dots" id="tutorial-dots"></div>
+                <button class="tutorial-nav" id="tutorial-next">Next</button>
+              </div>
+            </div>
+
+            <div class="screen screen-home" data-screen="home">
+              <div class="hero-card">
+                <div class="screen-pill">Offline privacy utility</div>
+                <h2 class="screen-title">NullByte</h2>
+                <p class="screen-text">
+                  Create clean photo copies before you post, message, or upload them.
+                </p>
+              </div>
+
+              <div class="action-card">
+                <h3>Start here</h3>
+                <button class="primary-action">Pick photos to clean</button>
+                <button class="secondary-action">Open the tutorial again</button>
+              </div>
+
+              <div class="toggle-card">
+                <div>
+                  <p class="toggle-title">Privacy reminders</p>
+                  <p class="toggle-copy">Opt in to local notifications that remind you to scrub photos before sharing.</p>
+                </div>
+                <button class="toggle is-on" id="preview-toggle" aria-label="Toggle privacy reminders">
+                  <span class="toggle-thumb"></span>
+                </button>
+              </div>
+
+              <div class="how-card">
+                <h3>How to use NullByte</h3>
+                <ol class="steps">
+                  <li>Select photos from your gallery or share them into NullByte.</li>
+                  <li>Review the local scan summary for common EXIF tags.</li>
+                  <li>Export clean copies into <code>Pictures/NullByte</code>.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="screen screen-review" data-screen="review">
+              <div class="review-header">
+                <div class="screen-pill">Local scan</div>
+                <h2 class="screen-title">Review and sanitize</h2>
+                <p class="screen-text">NullByte scans these images locally and creates new clean copies when you sanitize them.</p>
+              </div>
+
+              <div class="format-card">
+                <h3>Choose an export format</h3>
+                <div class="format-pills">
+                  <button class="format-pill is-selected">Auto</button>
+                  <button class="format-pill">JPG</button>
+                  <button class="format-pill">PNG</button>
+                  <button class="format-pill">WebP</button>
+                </div>
+              </div>
+
+              <div class="file-card">
+                <div class="file-head">
+                  <strong>IMG_2084.JPG</strong>
+                  <span>4 tags detected</span>
+                </div>
+                <div class="flag-row">
+                  <span class="flag is-hot">GPS found</span>
+                  <span class="flag is-hot">Device found</span>
+                  <span class="flag is-hot">Time found</span>
+                  <span class="flag is-cool">Author clear</span>
+                </div>
+                <p>Common share-sensitive metadata detected.</p>
+              </div>
+
+              <div class="file-card">
+                <div class="file-head">
+                  <strong>SETUP_SHOT.PNG</strong>
+                  <span>1 tag detected</span>
+                </div>
+                <div class="flag-row">
+                  <span class="flag is-cool">GPS clear</span>
+                  <span class="flag is-cool">Device clear</span>
+                  <span class="flag is-hot">Time found</span>
+                  <span class="flag is-cool">Author clear</span>
+                </div>
+                <p>No location tags found, but a timestamp is still present in the file metadata.</p>
+              </div>
+
+              <button class="primary-action">Sanitize 2 photos</button>
+            </div>
+
+            <div class="screen screen-complete" data-screen="complete">
+              <div class="result-card">
+                <div class="screen-pill">Export complete</div>
+                <h2 class="screen-title">Clean copies ready</h2>
+                <p class="screen-text">
+                  2 clean copies were saved to <code>Pictures/NullByte</code>. Originals were left untouched.
+                </p>
+              </div>
+
+              <div class="notification-preview">
+                <p class="notification-label">Reminder preview</p>
+                <h3>Clean before you share</h3>
+                <p>NullByte is ready when you want to strip location and camera tags from photos.</p>
+                <div class="notification-actions">
+                  <button class="secondary-action compact">Open NullByte</button>
+                  <button class="secondary-action compact">How it works</button>
+                </div>
+              </div>
+
+              <div class="promise-grid">
+                <article>
+                  <h3>Offline</h3>
+                  <p>No account, no cloud processing, no analytics.</p>
+                </article>
+                <article>
+                  <h3>Simple</h3>
+                  <p>One flow, clear language, no fake security theater.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
